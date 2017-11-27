@@ -84,5 +84,4 @@ configuration file “settings.dat” is used.
 
 **Configuration Format**
 
-Page 4 of this document defines the possible child node types of each
-node, and their attributes.
+For information on the MasterControl Configuration Format can be viewed [here](http://htmlpreview.github.io/?https://github.com/aphillip/MasterControl/blob/master/MasterControlConfigurationFormat.html).
