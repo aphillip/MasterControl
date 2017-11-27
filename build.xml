@@ -11,8 +11,8 @@
 
 <target name="clean">
     <delete>
-		<fileset dir="src/one" includes="**/*.class"/>
-	 </delete>
+	<fileset dir="src/one" includes="**/*.class"/>
+    </delete>
 </target>
 
 <target name="compile" depends="clean">    	
@@ -32,6 +32,7 @@
 	<mkdir dir="build/one/andgate/MasterControl/xml" />	
 	<mkdir dir="build/src/one/andgate/MasterControl/swing" />
 	<mkdir dir="build/src/one/andgate/MasterControl/xml" />
+	<mkdir dir="build/src/media" />
 	<mkdir dir="distribution" />
 	
 	<copy todir="build/one/andgate/MasterControl/swing">
@@ -55,7 +56,9 @@
     <copy todir="build/src" file="build.xml" />
 	<copy todir="build/src" file="manifest.txt" />
 	<copy todir="build/src" file="README.md" />
-	<copy todir="build/src" file="Master Control Documentation.pdf" />
+	<copy todir="build/src/media">
+	    <fileset dir="src/media" includes="*.*" />
+	</copy>
 
 	<jar destfile="MasterControl.jar" basedir="build" manifest="manifest.txt" />
 	
