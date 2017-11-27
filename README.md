@@ -9,12 +9,13 @@ button groups for easy execution.
 
 Java Virtual Machine
 
-Jaxen Xpath library for Java
+Jaxen Xpath library for Java (Included)
 
 **Usage**
 
-Use Java to execute the file MasterControl.jar. In most cases, double
-clicking the file will automatically execute it with Java.
+Use Java to execute the file MasterControl.jar:
+
+`java -jar MasterControl.jar`
 
 **User Interface**
 
@@ -37,7 +38,7 @@ the previous screen capture:
 
 **Configuration Nodes**
 
-The configuration is displayed in a tree fashion in the left pane of the
+The configuration is displayed in a tree view on the left pane of the
 window (called the “Configuration pane”) comprised of items called
 nodes. Each node may or may not have child nodes. For example, the root
 node, labeled “Configuration”, has two child nodes labeled “TCP Clients”
@@ -47,22 +48,13 @@ structure can be altered by adding, reordering, and removing nodes.
 Right clicking on a node causes a context menu to popup, having these
 three options:
 
--   Add Child – Adds a child node to the selected node. The new child
-    > will be the last node of all selected node’s children. For
-    > example, if the node “Button – Notepad” was currently selected,
-    > the new child would appear after the node, “Command –
-    > exec ‘notepad.exe’”.
+-   Add Child – Adds a child node to the selected node. The new child will be the last node of all selected node’s children. For example, if the node “Button – Notepad” was currently selected, the new child would appear after the node, “Command – exec ‘notepad.exe’”.
 
--   Add Sibling – Adds a child node to the parent node of the
-    > selected node. The new child will appear after the selected node.
-    > For example, if the node “Button – Notepad” was currently
-    > selected, a new node would appear before the node “Button – Media
-    > Player” as a child of the node “Section – Extra”.
+-   Add Sibling – Adds a child node to the parent node of the selected node. The new child will appear after the selected node. For example, if the node “Button – Notepad” was currently selected, a new node would appear before the node “Button – Media Player” as a child of the node “Section – Extra”.
 
--   Remove Item – Removes the current node from the tree. Some nodes
-    > cannot be removed.
+-   Remove Item – Removes the current node from the tree. Some nodes cannot be removed.
 
-Nodes can be rearranged, as long as the will still have the same parent.
+Nodes can be rearranged, as long as they will still have the same parent.
 To move a node, left click on the node and drag it to its new position.
 When the mouse button is released, the node will be moved.
 
@@ -73,11 +65,6 @@ attributes are displayed in the right pane of the window (called the
 “Attributes pane”). They can be altered by typing in or selecting a new
 value. The changes will be saved and reflected once the Configuration
 screen has been closed. Attributes cannot be added or removed.
-
-**Configuration Format**
-
-Page 4 of this document defines the possible child node types of each
-node, and their attributes.
 
 **Configuration Management**
 
@@ -94,3 +81,8 @@ java –jar MasterControl.jar YourConfigFileHere.dat
 where “YourConfigFileHere.dat” is the name of the configuration file you
 wish to use. If a configuration file is not specified, the default
 configuration file “settings.dat” is used.
+
+**Configuration Format**
+
+Page 4 of this document defines the possible child node types of each
+node, and their attributes.
