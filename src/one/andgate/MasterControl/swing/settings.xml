@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config password="" atexit="">
+
+	<servers allstring="All">		
+	</servers>
+
+	<interface title="Master Control" width="640" height="480" fullscreen="False" restrictmouse="False" alwaysontop="False" fontsize="12">
+		<section name="New Section">			
+		</section>
+	</interface>
+
+</config>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config node-tostringexpression="fn:string('Configuration')" password="default=;hash=true">
+
+	<servers node-minimum="1" node-maximum="1" node-tostringexpression="fn:string('TCP Servers')" allstring="default=All;hidden=true">
+		<server node-minimum="0" node-maximum="0" node-tostringexpression="./@name" name="default=New Server;focus=true" ip="" port="" messageterminator="default=0x0D" responsesize="default=8" timeout="default=5000" />		
+	</servers>
+	
+	<interface node-minimum="1" node-maximum="1" node-tostringexpression="fn:string('User Interface')" title="focus=true" width="default=640" height="default=480" fullscreen="default=False;options=True,False" restrictmouse="default=False;options=True,False" alwaysontop="default=False;options=True,False" fontsize="default=12">
+		<section node-minimum="1" node-maximum="0" node-tostringexpression="fn:concat('Section - ',./@name)" name="default=New Section">
+			<button node-tostringexpression="fn:concat('Button - ',./@label)" color="default=Default;options=Default,Black,Gray,LightGray,DarkGray,Red,Blue,Green,Orange,LightOrange,Yellow,Pink,Magenta,Cyan,White" label="default=New Button" tooltip="" runatexit="default=False;options=True,False">			    
+			    <confirm node-tostringexpression="fn:concat('Command - ',fn:name(),' &quot;',./@prompt,'&quot;')" title="default=Confirm" prompt=""/>			    
+			    <confirminput node-tostringexpression="fn:concat('Command - ',fn:name(),' &quot;',./@prompt,'&quot;')" default="" prompt="" matchvalue=""/>
+			    <exec node-tostringexpression="fn:concat('Command - ',fn:name(),' &quot;',./@command,'&quot;')" wait="default=False;options=True,False" command="" groupname=""/>
+			    <kill node-tostringexpression="fn:concat('Command - ',fn:name(),' &quot;',./@groupname,'&quot;')" groupname=""/>
+			    <sendkey node-tostringexpression="fn:concat('Command - ',fn:name(),' &quot;',./@keycombo,'&quot;')" keylist="" presstime="default=200" />
+			    <tcpsend node-tostringexpression="fn:concat('Command - ',fn:name(),' &quot;',./@value,'&quot;')" target="options=xpath:/config/servers/@allstring|/config/servers/server/@name:editable" value="" valueformat="default=Text;options=Hexadecimal,Text" readresponse="default=False;options=True,False" />
+			    <wait node-tostringexpression="fn:concat('Command - ',fn:name(),' &quot;',./@time,'&quot;')" time="default=1000" />
+			</button>			
+		</section>
+	</interface>
+	
+	<atexit node-uses-children-of="/config/interface/section/button" node-tostringexpression="fn:string('At Exit')" enabled="default=False;options=True,False">
+	</atexit>
+ </config>

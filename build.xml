@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<project name="MasterControl Build File" default="Usage" basedir=".">
+
+<target name="Usage">
+    <echo>ant clean - Clean the build environment</echo>
+    <echo>ant compile - Compiles the application</echo>    
+    <echo>ant build - Compiles, creates a JAR of, and runs the application</echo>    
+    <echo>ant run - Runs the jar</echo>
+</target>
+
+
+<target name="clean">
+    <delete>
+		<fileset dir="src/one" includes="**/*.class"/>
+	 </delete>
+</target>
+
+<target name="compile" depends="clean">    	
+    <javac includeAntRuntime="false" srcdir="." includes="src/one/andgate/MasterControl/swing/*.java,src/one/andgate/MasterControl/xml/*.java" >
+        <compilerarg value="-Xlint:unchecked" />
+        <compilerarg value="-Xlint:deprecation" />
+        <classpath>
+            <path><fileset dir="."  includes="*.jar" /></path>
+        </classpath>
+    </javac>
+</target>
+
+<target name="build" depends="compile">
+    <delete dir="build" />
+    <delete dir="distribution" />
+	<mkdir dir="build/one/andgate/MasterControl/swing" />
+	<mkdir dir="build/one/andgate/MasterControl/xml" />	
+	<mkdir dir="build/src/one/andgate/MasterControl/swing" />
+	<mkdir dir="build/src/one/andgate/MasterControl/xml" />
+	<mkdir dir="distribution" />
+	
+	<copy todir="build/one/andgate/MasterControl/swing">
+	    <fileset dir="src/one/andgate/MasterControl/swing" includes="*.class" />
+	    <fileset dir="src/one/andgate/MasterControl/swing" includes="*.xml" />
+	</copy>
+	
+	<copy todir="build/src/one/andgate/MasterControl/swing">
+	    <fileset dir="src/one/andgate/MasterControl/swing" includes="*.java" />
+	    <fileset dir="src/one/andgate/MasterControl/swing" includes="*.xml" />
+	</copy>
+	
+	<copy todir="build/one/andgate/MasterControl/xml">
+	    <fileset dir="src/one/andgate/MasterControl/xml" includes="*.class" />
+	</copy>
+
+	<copy todir="build/src/one/andgate/MasterControl/xml">
+	    <fileset dir="src/one/andgate/MasterControl/xml" includes="*.java" />
+	</copy>
+
+    <copy todir="build/src" file="build.xml" />
+	<copy todir="build/src" file="manifest.txt" />
+	<copy todir="build/src" file="README.md" />
+	<copy todir="build/src" file="Master Control Documentation.pdf" />
+
+	<jar destfile="MasterControl.jar" basedir="build" manifest="manifest.txt" />
+	
+	<copy todir="distribution" file="MasterControl.jar" />
+	<copy todir="distribution" file="jaxen.jar" />
+	<copy todir="distribution" file="Master Control Documentation.pdf" />
+    
+    <antcall target="run" />
+	
+</target>
+
+<target name="run">
+    <exec executable="java">
+        <arg value="-jar" />
+		<arg value="MasterControl.jar" />				
+	</exec>
+</target>
+  
+</project>

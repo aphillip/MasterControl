@@ -1,0 +1,2 @@
+Main-Class: one.andgate.MasterControl.swing.MasterControl
+Class-Path: jaxen.jar
