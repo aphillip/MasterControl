@@ -32,7 +32,7 @@
 	<mkdir dir="build/one/andgate/MasterControl/xml" />	
 	<mkdir dir="build/src/one/andgate/MasterControl/swing" />
 	<mkdir dir="build/src/one/andgate/MasterControl/xml" />
-	<mkdir dir="build/src/media" />
+	<mkdir dir="build/media" />
 	<mkdir dir="distribution" />
 	
 	<copy todir="build/one/andgate/MasterControl/swing">
@@ -57,14 +57,14 @@
 	<copy todir="build/src" file="manifest.txt" />
 	<copy todir="build/src" file="README.md" />
 	<copy todir="build/src/media">
-	    <fileset dir="src/media" includes="*.*" />
+	    <fileset dir="build/media" includes="*.*" />
 	</copy>
 
 	<jar destfile="MasterControl.jar" basedir="build" manifest="manifest.txt" />
 	
 	<copy todir="distribution" file="MasterControl.jar" />
 	<copy todir="distribution" file="jaxen.jar" />
-	<copy todir="distribution" file="Master Control Documentation.pdf" />
+	<copy todir="distribution" file="README.md" />
     
     <antcall target="run" />
 	
