@@ -1,6 +1,6 @@
-**Master Control Documentation**
+**MasterControl Documentation**
 
-Master Control is a program that facilitates sending TCP commands to
+MasterControl is a program that facilitates sending TCP commands to
 other devices, the execution of other programs, and the sending of
 keystrokes to the system. This is presented to the user as a series of
 button groups for easy execution.
@@ -10,6 +10,18 @@ button groups for easy execution.
 Java Virtual Machine
 
 Jaxen Xpath library for Java (Included)
+
+
+**Compiling MasterControl**
+
+Compilation of the application requires Apache Ant. Build and run the application with the following command:
+
+`ant build`
+
+To view other options, just run:
+
+`ant`
+
 
 **Usage**
 
