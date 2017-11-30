@@ -102,5 +102,4 @@ For information on the MasterControl Configuration Format can be viewed [here](h
 
 TCPCommunicator is a java class that can act as a TCP server and a TCP client.  It can be used as a dummy server for MasterControl’s tcpsend command.  It is located in the src/test folder.  
 
-Compile it with
-`javac TCPCommunicator.java` and run with `java TCPCommunicator` to see usage instructions.
+Compile it with `javac TCPCommunicator.java` and run with `java TCPCommunicator` to see usage instructions.
