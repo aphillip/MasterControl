@@ -97,3 +97,7 @@ configuration file “settings.dat” is used.
 **Configuration Format**
 
 For information on the MasterControl Configuration Format can be viewed [here](http://htmlpreview.github.io/?https://github.com/aphillip/MasterControl/blob/master/MasterControlConfigurationFormat.html).
+
+**TCPCommunicator**
+
+TCPCommunicator is a java class that can act as a TCP server and a TCP client.  It can be used as a dummy server for MasterControl’s tcpsend command.  It is located in the src/test folder and can be compiled with javac. Run `java TCPCommunicator` for usage instructions.
