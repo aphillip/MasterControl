@@ -104,4 +104,4 @@ TCPCommunicator is a java class that can act as a TCP server and a TCP client.  
 
 Compile it with `javac TCPCommunicator.java` and run with `java TCPCommunicator` to see usage instructions.
 
-<img src="./src/test/TCPCommunicatorUsage.png" width="576" height="432" />
+<img src="./src/test/TCPCommunicatorUsage.png" width="819" height="508" />
